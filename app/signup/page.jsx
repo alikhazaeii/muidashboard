@@ -3,29 +3,25 @@ import * as React from 'react';
 import Checkbox from '@mui/material/Checkbox';
 import { AppProvider } from '@toolpad/core/AppProvider';
 import { SignInPage } from '@toolpad/core/SignInPage';
-import { useRouter } from 'next/navigation'; 
+import { useRouter } from 'next/navigation';
 
 const providers = [{ id: 'credentials', name: 'Email and Password' }];
 
-export default function SlotPropsSignIn({provider}) {
-  const router = useRouter(); 
+export default function SlotPropsSignIn() {
+  const router = useRouter();
 
   const handleSignIn = (provider, formData) => {
     const email = formData.get('email');
     const password = formData.get('password');
-    const tandc = formData.get('tandc');
 
-    alert(
-      `Signing in with "${provider.name}" and credentials: ${email}, ${password}, T&C: ${tandc}`,
-    );
-
+    alert(`Welcome, ${email}`);
     router.push('/dashboard');
   };
 
   return (
     <AppProvider>
       <SignInPage
-        signIn={handleSignIn} 
+        signIn={handleSignIn}
         slotProps={{
           emailField: { variant: 'standard', autoFocus: false },
           passwordField: { variant: 'standard' },
