@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 import { createTheme } from '@mui/material/styles';
-import DashboardIcon from '@mui/icons-material/Dashboard';
+import DashboardIcon  from '@mui/icons-material/Dashboard';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { AppProvider } from '@toolpad/core/AppProvider';
 import { DashboardLayout } from '@toolpad/core/DashboardLayout';
@@ -14,6 +14,11 @@ import { AccountPreview } from '@toolpad/core/Account';
 import DashboardPage from '../ui/dashbordontent';
 import OrdersPage from '../ui/ordercontent';
 import AccountCustomSlotProps from '../ui/profile';
+import { BarChart } from '@mui/icons-material';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import SettingsIcon from '@mui/icons-material/Settings';
+import LayersIcon from '@mui/icons-material/Layers';
+import Profilepage from '../ui/profilepage';
 
 const NAVIGATION = [
   {
@@ -30,7 +35,37 @@ const NAVIGATION = [
     title: 'Orders',
     icon: <ShoppingCartIcon />,
   },
+  {
+    kind: 'divider',
+  },
+  {
+    kind: 'header',
+    title: 'Analytics',
+  },
+  {
+    segment: 'pages',
+    title: 'Pages',
+    icon: <BarChart />,
+    children: [
+      {
+        segment: 'profile', 
+        title: 'Profile',
+        icon: <AccountBoxIcon />,
+      },
+      {
+        segment: 'setting', 
+        title: 'Setting',
+        icon: <SettingsIcon />,
+      },
+    ],
+  },
+  {
+    segment: 'integrations',
+    title: 'Integrations',
+    icon: <LayersIcon />,
+  },
 ];
+
 
 const demoTheme = createTheme({
   cssVariables: {
@@ -52,9 +87,11 @@ function DemoPageContent({ pathname }) {
   const pages = {
     '/dashboard': <DashboardPage />,
     '/orders': <OrdersPage />,
+    '/pages/profile': <Profilepage />, 
+    '/pages/setting': <div>Settings Page</div>, 
   };
-
   return pages[pathname] || <div>Page not found</div>;
+
   return (
     <Box
       sx={{
@@ -140,9 +177,9 @@ function DashboardLayoutAccountSidebar(props) {
         <DemoPageContent pathname={pathname} />
 
       </DashboardLayout>
-      
+
     </AppProvider>
-    
+
   );
 }
 
