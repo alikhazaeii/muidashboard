@@ -13,6 +13,7 @@ import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import BasicLineChart from './linechart';
+import ArcDesign from './gaugechart';
 
 
 function DashboardPage() {
@@ -87,7 +88,7 @@ function DashboardPage() {
           <Grid item xs={12} sm={6} md={4} lg={2}>
             <Item>
               <div className='w-full capitalize text-start *:p-2'>
-                <h3 className='text-2xl'>sales today</h3>
+                <h3 className='text-xl'>sales today</h3>
                 <h2 className='text-2xl'>2.563</h2>
                 <p className='flex *:p-1'>
                   <span className='text-green-800 rounded-md bg-green-500'>+28% </span>
@@ -99,7 +100,7 @@ function DashboardPage() {
           <Grid item xs={12} sm={6} md={4} lg={2}>
             <Item>
               <div className='w-full capitalize text-start *:p-2'>
-                <h3 className='text-2xl'>Visitors</h3>
+                <h3 className='text-xl'>Visitors</h3>
                 <h2 className='text-2xl'>170.212</h2>
                 <p className='flex *:p-1'>
                   <span className='text-red-800 rounded-md bg-red-400'>-14% </span>
@@ -111,7 +112,7 @@ function DashboardPage() {
           <Grid item xs={12} sm={6} md={4} lg={2}>
             <Item>
               <div className='w-full capitalize text-start *:p-2'>
-                <h3 className='text-2xl'>Total Earnings</h3>
+                <h3 className='text-xl'>Total Earnings</h3>
                 <h2 className='text-2xl'>$ 24.300</h2>
                 <p className='flex *:p-1'>
                   <span className='text-green-800 rounded-md bg-green-500'>+18% </span>
@@ -122,7 +123,7 @@ function DashboardPage() {
           </Grid>
           <Grid item xs={12} sm={6} md={4} lg={2}>
             <Item>  <div className='w-full capitalize text-start *:p-2'>
-              <h3 className='text-2xl'>Pending Order</h3>
+              <h3 className='text-xl'>Pending Order</h3>
               <h2 className='text-2xl'>45</h2>
               <p className='flex *:p-1'>
                 <span className='text-red-800 rounded-md bg-red-400'>+18% </span>
@@ -133,11 +134,11 @@ function DashboardPage() {
         </Grid>
       </Box>
           <Box sx={{display:'flex', flexWrap:'wrap', justifyContent:'space-evenly'}}>
-            <Typography className='w-7/12'  component='div'>
+            <Typography className='w-full lg:w-8/12 overflow-hidden'  component='div'>
             <BasicLineChart/>
             </Typography>
-            <Typography className='w-4/12 bg-blue-600' >
-              
+            <Typography className='w-full lg:w-4/12 flex justify-center items-center' component='div' >
+              <ArcDesign/>
             </Typography>
           </Box>
     </>
