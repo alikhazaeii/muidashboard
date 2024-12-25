@@ -138,7 +138,7 @@ function DashboardPage() {
             <BasicLineChart/>
             </Typography>
             <Typography className='w-full lg:w-4/12 flex justify-center items-center' component='div' >
-              <ArcDesign/>
+              <ArcDesign />
             </Typography>
           </Box>
     </>
