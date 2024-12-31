@@ -41,6 +41,11 @@ export default function SlotPropsSignIn() {
         }}
         providers={providers}
       />
+      <div className='absolute *:w-full *:text-center w-[500px] h-[100px] right-[50%] translate-x-[50%] bottom-0 '>
+        <h1>For Enter to Dashboard</h1>
+        <p className='text-xl'>Email: <strong className='text-2xl'>Alikhazaei@gmail.com</strong></p>
+        <p className='text-xl'>Password: <strong className='text-2xl'>0000</strong></p>
+      </div>
     </AppProvider>
   );
 }
